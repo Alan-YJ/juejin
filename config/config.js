@@ -1,3 +1,5 @@
+const Sequelize = require('sequelize')
+
 if(process.env.NODE_ENV === 'production'){
     require('env2')('./.env.prod')
 }else{
@@ -23,6 +25,6 @@ module.exports = {
         "host": env.MYSQL_HOST,
         "port": env.MYSQL_PORT,
         "dialect": "mysql",
-        "operatorsAliases": false,
+        "operatorsAliases": Sequelize.Op,
     },
 }
