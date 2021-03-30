@@ -16,6 +16,7 @@ module.exports = [
         config:{
             tags:['api', GROUP_NAME],
             description: "获取店铺列表",
+            auth:false,
             validate:{
                 query:Joi.object({
                     limit: Joi.number().integer().min(1).default(10).description("每页的条数"),
@@ -46,6 +47,7 @@ module.exports = [
         config:{
             tags:['api',GROUP_NAME],
             description:"获取店铺的商品列表",
+            auth:false,
             validate:{
                 params: Joi.object({
                     shopId: Joi.string().required().error(new Error("店铺ID必填"))

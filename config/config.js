@@ -1,9 +1,10 @@
 const Sequelize = require('sequelize')
+const env2 = require('env2');
 
 if(process.env.NODE_ENV === 'production'){
-    require('env2')('./.env.prod')
+    env2('./.env.prod')
 }else{
-    require('env2')('./.env')
+    env2('./.env')
 }
 
 const { env } = process

@@ -1,12 +1,15 @@
-require('env2')('./.env')
 const hapiAuthJWT2 = require('hapi-auth-jwt2')
+require('env2')('./.env')
 const Hapi = require("@hapi/hapi");
 const config = require("./config")
 const routes = require("./routes/index")
 const pluginHapiSwagger = require("./plugins/hapi-swagger")
 const pluginAuthJWT2 = require("./plugins/hapi-auth-jwt2")
 
-const server = Hapi.server(config)
+const server = Hapi.server({
+    port: config.port,
+    host: config.host
+})
 
 const init = async ()=>{
     await server.register([

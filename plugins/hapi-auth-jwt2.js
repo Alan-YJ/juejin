@@ -2,7 +2,9 @@ const config = require('../config')
 
 const validate = (decoded, request, h)=>{
     let error;
-    const {userId} = decoded
+    const { userId } = decoded
+    
+    console.info('validate', decoded)
     if(!userId){
         return h.response(error,false, userId)
     }
@@ -16,6 +18,7 @@ const validate = (decoded, request, h)=>{
 module.exports = (server)=>{
     server.auth.strategy('jwt','jwt',{
         key: config.jwtSecret,
+        // validateFunc: validate,
         validate
     });
     server.auth.default('jwt');
