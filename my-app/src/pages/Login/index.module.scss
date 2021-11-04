@@ -1,0 +1,21 @@
+.loginPage {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://t7.baidu.com/it/u=3349508718,2617538663&fm=218&app=92&f=JPG?w=121&h=75&s=180C3472CB4367641CF5D0CA0000E0B1");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 14px;
+  display: flex;
+  :global{
+    .login-wrap{
+      padding: 0 16%;
+      flex:1;
+      display: flex;
+      align-items: center;
+      &>div{
+        background-color:white;
+        width:100%;
+      }
+    }
+  }
+}
