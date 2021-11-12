@@ -12,7 +12,7 @@ const Login = () => {
           <Col span="12">img</Col>
           <Col span="12">
             <h1>登录</h1>
-            <div></div>
+            <div>git 测试</div>
           </Col>
         </Row>
       </div>
